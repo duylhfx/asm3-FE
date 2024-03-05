@@ -1,3 +1,4 @@
+import axios from "axios";
 import { serverUrl } from "../../util/getPostData";
 import ImageItem from "./ImageItem";
 import { json, useLoaderData } from "react-router-dom";
@@ -12,7 +13,11 @@ function ListItems() {
         <h3>TOP TRENDING PRODUCTS</h3>
       </div>
       <div>
-        <ImageItem data={data} />
+        {data ? (
+          <ImageItem data={data} />
+        ) : (
+          <h3 style={{ marginTop: "20px" }}>Loading...</h3>
+        )}
       </div>
     </section>
   );
@@ -21,10 +26,18 @@ function ListItems() {
 export default ListItems;
 
 export async function listImgLoader() {
-  const res = fetch(`${serverUrl}/products`);
-
-  if (!res) {
-    throw json({ message: "Can't fetch data" }, { status: 500 });
+  let res;
+  try {
+    let fetch = await axios.get(`${serverUrl}/products`, {
+      withCredentials: true,
+    });
+    res = fetch.data;
+    if (!res) {
+      throw json({ message: "Can't fetch data" }, { status: 500 });
+    }
+  } catch (err) {
+    console.log(err);
+    res = null;
   }
 
   return res;

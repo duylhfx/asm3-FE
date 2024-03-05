@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 // "https://asm3-be-e7fc.onrender.com";
 // "http://localhost:5000"
-axios.defaults.baseURL = "https://asm3-be-e7fc.onrender.com";
-const serverUrl = "https://asm3-be-e7fc.onrender.com";
+axios.defaults.baseURL = "http://localhost:5000";
+const serverUrl = "http://localhost:5000";
 
 // get data
 function useGetData(path) {
