@@ -4,6 +4,9 @@
   "private": true,
   "author": "duylhFX19520",
   "license": "ISC",
+  "engines": {
+    "node": "18.16.0"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",
