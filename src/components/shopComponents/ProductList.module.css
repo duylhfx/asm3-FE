@@ -1,0 +1,18 @@
+.list ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  /* border: 1px solid red; */
+  min-height: 500px;
+}
+
+.list ul li {
+  display: grid;
+  place-items: center;
+  padding: 5px;
+}
+
+.list img {
+  width: 100%;
+}

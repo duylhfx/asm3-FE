@@ -1,0 +1,23 @@
+/*  */
+/* FORM UI */
+form {
+  /* border: 1px solid red; */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+input {
+  padding: 5px 10px;
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+button {
+  background-color: rgb(29, 28, 28);
+  color: rgb(153, 153, 153);
+  padding: 6px 18px;
+  border: none;
+  font-style: italic;
+  width: 30%;
+}
+button:hover {
+  color: white;
+}

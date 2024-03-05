@@ -1,0 +1,75 @@
+/* SHOP PAGE */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  /* border: 1px solid red; */
+}
+.item {
+  display: grid;
+  margin-left: 20px;
+}
+.item .listItems {
+  grid-column: 1 / span 2;
+  margin-top: 20px;
+}
+
+/* UI Banner */
+.banner {
+  height: 200px;
+  width: 100%;
+  margin: 0;
+  background: var(--bgColor1);
+  display: flex;
+  align-items: center;
+}
+
+/* UI Pagination */
+.pagination {
+  /* border: 1px solid red; */
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+.pagination ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  border: 1px solid red;
+}
+
+.pagination button {
+  border: 1px solid rgb(110, 110, 110, 0.5);
+  width: 100%;
+}
+.pagination button:hover {
+  background: rgba(175, 173, 173);
+}
+.pagination li:nth-child(2) {
+  min-width: 40px;
+  height: auto;
+  text-align: center;
+  background: black;
+  color: white;
+  padding: 5px 10px;
+}
+
+/* UI Search Bar */
+.filter {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1 / span 2;
+  max-height: 40px;
+}
+.filter input {
+  padding: 5px 15px;
+  width: clamp(140px, 35%, 300px);
+}
+.filter select {
+  width: clamp(130px, 20%, 200px);
+}

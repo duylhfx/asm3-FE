@@ -1,0 +1,35 @@
+.historyDetail {
+  min-height: 100vh;
+}
+
+.userInfo {
+  padding: 20px 40px;
+}
+
+.tableContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.tableContainer table {
+  flex-direction: column;
+  margin: 30px 0px;
+  color: rgb(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.tableContainer table,
+th,
+td {
+  border: none;
+  text-align: center;
+  padding: 8px;
+}
+
+.tableContainer table img {
+  padding: 5px;
+}
+
+.tableContainer thead {
+  background: var(--bgColor1);
+}

@@ -1,0 +1,13 @@
+.errorContainer {
+  /* border: 1px solid black; */
+  height: 50vh;
+  text-align: center;
+}
+.errorContainer h1 {
+  padding-top: 40px;
+  color: red;
+}
+
+.errorContainer p {
+  font-size: 28px;
+}

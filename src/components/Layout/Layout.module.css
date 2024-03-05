@@ -1,0 +1,19 @@
+.app {
+  display: grid;
+  place-items: center;
+}
+.main {
+  width: var(--widthView);
+  min-width: var(--minWidthView);
+  font-style: italic;
+}
+.icon {
+  position: fixed;
+  top: 75%;
+  right: 6%;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  transform: scale(5);
+  color: gray;
+}

@@ -1,0 +1,152 @@
+.detail {
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(3, auto);
+  margin-top: 20px;
+}
+
+.detailItem {
+  display: grid;
+  grid-template-columns: 10% 40% 50%;
+  gap: 3px;
+}
+
+.infoProduct {
+  padding: 0 20px;
+}
+
+.groupBtn_addCart {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.controlNumItem {
+  border: 1px solid rgb(128, 128, 128, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+/* quantity input group */
+.controlNumItem input {
+  padding: 5px 0;
+  margin: 0;
+  border: none;
+  text-align: center;
+  width: 50%;
+}
+
+/* quantity input */
+.controlNumItem input:nth-child(1) {
+  min-width: 80px;
+}
+
+/* addToCart button */
+.groupBtn_addCart button:nth-child(2) {
+  width: 50%;
+  max-width: 120px;
+}
+
+.addCart:hover {
+  background-color: rgb(29, 28, 28);
+}
+
+/*  */
+/* IMG SLIDER UI */
+.slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.slider img {
+  width: 100%;
+  min-height: 60px;
+}
+.slider img:hover {
+  transform: scale(1.1);
+  opacity: 0.5;
+  cursor: pointer;
+}
+.mainImg {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.mainImg img {
+  width: 100%;
+  max-width: 350px;
+}
+
+/*  */
+/* SHORT DESCRIBE ITEM UI */
+
+/*  */
+/* LONG DESCRIBE ITEM UI */
+.description h3:nth-child(1) {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  max-width: 30%;
+  min-width: 180px;
+  text-align: center;
+  margin-top: 80px;
+}
+.description h3:nth-child(2) {
+  margin: 20px 0;
+}
+.description p {
+  white-space: pre-wrap;
+}
+
+/*  */
+/* HANDLER NUMBER INPUT UI */
+.btnControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid blue; */
+}
+.btnControl input {
+  width: 30px;
+  text-align: center;
+  border: none;
+}
+.btnControl button {
+  padding: 5px;
+  background-color: inherit;
+  border: none;
+  /* border: 1px solid red; */
+}
+.btnControl button:hover {
+  color: goldenrod;
+}
+
+/*  */
+/* RELATED ITEMS UI */
+.related {
+  margin-top: 50px;
+  /* border: 1px solid red; */
+  min-height: 150px;
+}
+.related ul {
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.related ul li {
+  display: grid;
+  place-items: center;
+}
+.related img {
+  width: 100px;
+}

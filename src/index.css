@@ -1,0 +1,79 @@
+:root {
+  --widthView: 80%;
+  --minWidthView: 400px;
+  --paddingView: 5%;
+  --bgColor1: rgb(243, 245, 243);
+  --btnColor: RGBA(33, 37, 41);
+  --btnColorHover: RGBA(33, 37, 41, 0.75);
+  --fs-3: clamp(1.5rem, 4vw, 2rem);
+  --fs-4: clamp(0.75rem, 2vw, 1.25rem);
+  --fs-5: clamp(0.75rem, 2vw, 1.25rem);
+  --fs-6: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Tilt Neon", cursive, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* border: 1px solid red; */
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+h2 {
+  font-size: var(--fs-3);
+  margin: 0;
+}
+
+h3 {
+  font-size: var(--fs-4);
+  margin: 0;
+}
+
+p {
+  font-size: var(--fs-5);
+  margin: 0;
+}
+
+h6 {
+  font-size: var(--fs-6);
+  margin: 0;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  z-index: 100;
+  border: none;
+}
+
+.errorPage {
+  display: grid;
+  place-items: center;
+  margin-top: 50px;
+}
+
+.errorPage i {
+  color: red;
+}
+
+/* hide button control inside input type number */
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}

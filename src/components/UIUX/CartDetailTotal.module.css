@@ -1,0 +1,20 @@
+/*  */
+/* CART DETAIL TOTAL UI */
+.cartTotal {
+  background-color: var(--bgColor1);
+  width: 100%;
+  /* border: 1px solid red; */
+  margin-bottom: 40px;
+}
+.cartTotal ul {
+  list-style: none;
+  padding: 0;
+}
+.cartTotal ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}

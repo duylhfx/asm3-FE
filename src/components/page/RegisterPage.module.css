@@ -1,0 +1,76 @@
+.login {
+  /* border: 1px solid red; */
+  background-color: var(--bgColor1);
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+.login img {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  z-index: -1;
+  transform: translate(8%, 5%);
+  object-fit: cover;
+  background-repeat: inherit;
+}
+.auth {
+  margin: 3rem auto;
+  padding: 0 2.5rem;
+  width: 45%;
+  min-width: 300px;
+  border-radius: 6px;
+  background-color: white;
+  color: gray;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.control input {
+  font: inherit;
+  border: 1px solid rgb(128, 128, 128, 0.2);
+  width: 100%;
+  padding: 1rem;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions button {
+  color: white;
+  background-color: rgb(78, 77, 77);
+  border: none;
+  width: 100%;
+  padding: 1rem;
+}
+
+.actions button:hover {
+  background-color: rgb(39, 39, 39);
+}
+
+.actions .toggle {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #9f5ccc;
+  border: none;
+  padding: 0.15rem 1.5rem;
+}
+
+.actions .toggle:hover {
+  background-color: transparent;
+  color: #ae82cc;
+}
+.switch {
+  margin: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.switch a {
+  text-decoration: none;
+}

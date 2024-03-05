@@ -1,0 +1,31 @@
+.footer {
+  /* border: 1px solid red; */
+  font-style: italic;
+  width: 100%;
+  gap: 10%;
+  padding-bottom: 60px;
+  padding-top: 30px;
+}
+.footer div {
+  padding-top: 30px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer li {
+  opacity: 0.5;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer a:hover,
+.footer a:active,
+.footer a.active {
+  color: gray;
+}

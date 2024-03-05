@@ -1,0 +1,179 @@
+.modal {
+  position: fixed;
+  top: 15%;
+  right: 13%;
+  width: 30%;
+  min-width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  animation: myAnim 2s ease 0s 1 normal forwards;
+  z-index: 100;
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(128, 128, 128, 0.25);
+  padding: 10px 15px;
+}
+.title h5 {
+  font-weight: bolder;
+  margin: 0;
+}
+.title span {
+  background-color: rgb(182, 180, 180);
+  padding: 4px 12px;
+  font-style: italic;
+  opacity: 0.5;
+  font-size: 12px;
+  cursor: pointer;
+}
+.title span:hover {
+  background-color: black;
+  color: white;
+}
+
+@keyframes myAnim {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 1;
+    transform: translateY(-45px);
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  40% {
+    animation-timing-function: ease-in;
+    transform: translateY(-24px);
+  }
+
+  65% {
+    animation-timing-function: ease-in;
+    transform: translateY(-12px);
+  }
+
+  82% {
+    animation-timing-function: ease-in;
+    transform: translateY(-6px);
+  }
+
+  93% {
+    animation-timing-function: ease-in;
+    transform: translateY(-4px);
+  }
+
+  25%,
+  55%,
+  75%,
+  87% {
+    animation-timing-function: ease-out;
+    transform: translateY(0px);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/*  */
+/* CHAT CONTENT UI */
+.content {
+  /* border: 1px solid red; */
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  font-style: italic;
+  overflow-y: scroll;
+}
+
+.icon2 {
+  display: flex;
+  cursor: pointer;
+  transform: scale(1.5);
+  position: relative;
+  top: 30%;
+}
+
+.userChat {
+  width: 100%;
+  opacity: 0.75;
+  text-align: right;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.userChat span {
+  background-color: rgb(36, 87, 230);
+  height: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.botChat {
+  width: 100%;
+  opacity: 0.75;
+  text-align: left;
+  margin-bottom: 10px;
+  color: white;
+  display: flex;
+  gap: 15px;
+}
+
+.botChat span {
+  background-color: gray;
+  height: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/*  */
+/* CHAT ENTER UI */
+
+.chatEnter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  border-top: 1px solid rgb(128, 128, 128, 0.25);
+  padding: 10px 15px;
+  background-color: var(--bgColor1);
+  /* border: 1px solid red; */
+  border-radius: 0 0 15px 15px;
+  width: 100%;
+  margin-bottom: 0;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.icon:nth-child(1) {
+  /* border: 1px solid red; */
+  transform: scale(1.5);
+  cursor: default;
+}
+
+.chatEnter input {
+  padding: 3px 9px;
+  border: none;
+  width: 80%;
+}
+.chatEnter button {
+  background-color: inherit;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+}

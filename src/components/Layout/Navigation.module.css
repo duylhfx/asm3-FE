@@ -1,0 +1,64 @@
+.nav {
+  width: var(--widthView);
+  min-width: var(--minWidthView);
+  font-style: italic;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 40px;
+}
+
+.nav ul li {
+  cursor: pointer;
+  min-width: 55px;
+}
+
+.cartItems {
+  z-index: 100;
+}
+
+.nav li span {
+  color: rgb(224, 211, 24);
+  font-size: var(--fs-5);
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav a:hover,
+.nav a:active,
+.nav a.active {
+  color: gray;
+}
+
+.nav button {
+  font-style: italic;
+  font-weight: bolder;
+  padding: 5px;
+  /* border: 1px solid red; */
+  font-size: var(--fs-5);
+}
+
+/* .select {
+  border: none;
+  font-style: italic;
+  opacity: 0.75;
+  max-width: 120px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+.select:hover {
+  cursor: pointer;
+} */
