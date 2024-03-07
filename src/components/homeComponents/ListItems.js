@@ -2,9 +2,14 @@ import axios from "axios";
 import { serverUrl } from "../../util/getPostData";
 import ImageItem from "./ImageItem";
 import { json, useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
 
 function ListItems() {
   const data = useLoaderData();
+
+  // useEffect(()=>{
+  //   console.log(data)
+  // },[data])
 
   return (
     <section className="mt-4">

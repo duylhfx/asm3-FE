@@ -1,11 +1,13 @@
 {
   "name": "rjs-asm03",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "author": "duylhFX19520",
   "license": "ISC",
+  "homepage": "https://shopping-website-377c0.web.app",
   "engines": {
-    "node": "18.16.0"
+    "node": "18.16.0",
+    "npm": "9.5.1"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",

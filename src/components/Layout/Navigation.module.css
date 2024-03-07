@@ -17,6 +17,11 @@
   height: 40px;
 }
 
+.nav ul:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+
 .nav ul li {
   cursor: pointer;
   min-width: 55px;

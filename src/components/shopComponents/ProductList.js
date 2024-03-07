@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import { Item } from "../homeComponents/ImageItem";
 import styles from "./ProductList.module.css";
+import { useEffect } from "react";
 
 function ProductList({ inputVal }) {
   const navigate = useNavigate();
@@ -13,26 +14,29 @@ function ProductList({ inputVal }) {
   let filterData, result;
 
   // data pass from parent component
-  const dataLoader = useRouteLoaderData("shop");
-  const dataSearch = inputVal;
+  const dataLoader = useRouteLoaderData("shop"); // list items
+  const dataSearch = inputVal; // user input
 
   //-- LOGIC TO SEARCH ITEM --//
   // logic with multi conditions searching
   if (searchCategory || dataSearch) {
     filterData = dataLoader
-      .filter((el) => el.name.toLowerCase().includes(dataSearch.toLowerCase()))
-      .filter(
-        searchCategory ? (el) => el.category === searchCategory : (el) => el
+      ?.filter((el) =>
+        // filter by data input
+        dataSearch
+          ? el.name.toLowerCase().includes(dataSearch.toLowerCase())
+          : el
+      )
+      .filter((el) =>
+        // filter by category
+        searchCategory ? el.category === searchCategory : el
       );
-  }
-
-  // logic when page load init
-  if (!searchCategory && !dataSearch) {
+  } else {
     filterData = structuredClone(dataLoader);
   }
 
   result =
-    filterData.length > 0 ? (
+    filterData?.length > 0 ? (
       filterData.map((el, index) => (
         <li key={index}>
           <Item
@@ -51,7 +55,7 @@ function ProductList({ inputVal }) {
       <li>
         <p
           style={{ width: "100%", color: "red", marginTop: 0 }}
-        >{`No ${searchCategory} item found!`}</p>
+        >{`No item found!`}</p>
       </li>
     );
 
