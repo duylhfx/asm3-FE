@@ -2,19 +2,17 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import styles from "./LoginPage.module.css";
 import { usePostData } from "../../util/getPostData";
+import axios from "axios";
 
 const LoginPage = () => {
   const [data, setData] = useState(null);
   const { updateUser } = useOutletContext();
-
-  // function addition when login
-  const cbLogin = () => {
-    localStorage.setItem("user", JSON.stringify(data.email));
-    updateUser(data.email);
-  };
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   // custom hook post data
-  const [postData, loading, error] = usePostData("/login", data, "/", cbLogin);
+  // const [postData, loading, error] = usePostData("/login", data, "/", cbLogin);
 
   // update data input
   function changeHandler(e) {
@@ -24,7 +22,28 @@ const LoginPage = () => {
 
   function submitHandler(e) {
     e.preventDefault();
-    postData();
+    setLoading(true);
+    setError(null);
+    axios
+      .post("/login", data, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        // console.log(res.data);
+        localStorage.setItem("jwt", res.data);
+        cbLogin();
+        navigate("/");
+      })
+      .catch((err) => {
+        setError(err.response.data);
+      })
+      .finally((rs) => setLoading(false));
+  }
+
+  // function addition when login
+  function cbLogin() {
+    localStorage.setItem("user", JSON.stringify(data.email));
+    updateUser(data.email);
   }
 
   return (

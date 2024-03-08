@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./RegisterPage.module.css";
 import { usePostData } from "../../util/getPostData";
+import axios from "axios";
 
 const RegisterPage = () => {
   const [data, setData] = useState(null);
-  const [postData, loading, error] = usePostData("/signup", data, "/login");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  // const [postData, loading, error] = usePostData("/signup", data, "/login");
 
   function changeHandler(e) {
     let updated = { [e.target.name]: e.target.value };
@@ -14,8 +18,21 @@ const RegisterPage = () => {
 
   function submitHandler(e) {
     e.preventDefault();
-    postData();
-    console.log(error);
+    setLoading(true);
+    setError(null);
+    axios
+      .post("/signup", data, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        // console.log(res.data);
+        localStorage.setItem("jwt", res.data);
+        navigate("/login");
+      })
+      .catch((err) => {
+        setError(err.response.data);
+      })
+      .finally((rs) => setLoading(false));
   }
 
   return (

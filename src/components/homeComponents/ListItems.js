@@ -31,10 +31,14 @@ function ListItems() {
 export default ListItems;
 
 export async function listImgLoader() {
+  const token = localStorage.getItem("jwt") || null;
   let res;
   try {
     let fetch = await axios.get(`${serverUrl}/products`, {
       withCredentials: true,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
     res = fetch.data;
     if (!res) {

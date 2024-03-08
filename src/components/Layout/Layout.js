@@ -5,12 +5,12 @@ import styles from "./Layout.module.css";
 import { AiFillWechat } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import LiveChat from "./LiveChat";
-import axios from "axios";
 
 function Layout() {
+  let data = useLoaderData();
+  let userOnline = JSON.parse(data);
   const [open, setOpen] = useState(false);
-  const [user, setUser] = useState(0);
-  const userOnline = useLoaderData();
+  const [user, setUser] = useState(userOnline);
 
   function updateUser(data) {
     setUser(data);
@@ -24,10 +24,6 @@ function Layout() {
   function clickHandler() {
     open ? setOpen(false) : setOpen(true);
   }
-
-  useEffect(() => {
-    userOnline ? setUser(userOnline.email) : setUser(null);
-  }, [userOnline]);
 
   return (
     <div className={styles.app}>
@@ -47,17 +43,7 @@ function Layout() {
 export default Layout;
 
 async function layoutLoader() {
-  let user;
-  try {
-    const response = await axios.get("/user", {
-      withCredentials: true,
-    });
-    user = response.data;
-  } catch (err) {
-    console.log(err);
-    user = "";
-  }
-
+  const user = localStorage.getItem("user") || null;
   return user;
 }
 

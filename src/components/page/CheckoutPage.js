@@ -97,7 +97,7 @@ function CheckoutPage() {
             loading={loading}
           />
         )}
-        <CartDetailTotal items={items} totalAmount={totalAmount} />
+        {user && <CartDetailTotal items={items} totalAmount={totalAmount} />}
       </div>
     </section>
   );
