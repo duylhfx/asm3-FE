@@ -11,9 +11,6 @@ const LoginPage = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  // custom hook post data
-  // const [postData, loading, error] = usePostData("/login", data, "/", cbLogin);
-
   // update data input
   function changeHandler(e) {
     let updated = { [e.target.name]: e.target.value };

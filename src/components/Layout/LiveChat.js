@@ -4,7 +4,7 @@ import { AiOutlinePaperClip } from "react-icons/ai";
 import { MdInsertEmoticon } from "react-icons/md";
 import { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
-import { serverUrl } from "../../util/getPostData";
+import { serverUrl, token } from "../../util/getPostData";
 
 function LiveChat({ closeChatBot }) {
   const inputRef = useRef("");
@@ -61,6 +61,9 @@ function LiveChat({ closeChatBot }) {
     // socket init
     const socketInit = io(serverUrl, {
       withCredentials: true,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
     setSocket(socketInit);
 

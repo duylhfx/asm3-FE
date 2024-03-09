@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 // "https://asm3-be-e7fc.onrender.com";
 // "http://localhost:5000"
 // https://be-aplshop-6e47979688b7.herokuapp.com
-axios.defaults.baseURL = "https://be-aplshop-6e47979688b7.herokuapp.com";
-const serverUrl = "https://be-aplshop-6e47979688b7.herokuapp.com";
+axios.defaults.baseURL = "https://be-aplshop-6e47979688b7.herokuapp.com/";
+const serverUrl = "https://be-aplshop-6e47979688b7.herokuapp.com/";
 
 const token = localStorage.getItem("jwt") || null;
 
@@ -70,4 +70,4 @@ function usePostData(path, data, direction, cb) {
   return [postData, loading, error];
 }
 
-export { useGetData, usePostData, serverUrl };
+export { useGetData, usePostData, serverUrl, token };
