@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 // https://be-aplshop-6e47979688b7.herokuapp.com
 axios.defaults.baseURL = "https://be-aplshop-6e47979688b7.herokuapp.com";
 const serverUrl = "https://be-aplshop-6e47979688b7.herokuapp.com";
+
 const token = localStorage.getItem("jwt") || null;
 
 // get data
